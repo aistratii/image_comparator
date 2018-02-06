@@ -1,5 +1,6 @@
 package imagesearch;
 
+import imagesearch.comparator.ComparatorService;
 import imagesearch.source.SourceImageFactory;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

@@ -1,7 +1,7 @@
 package imagesearch;
 
+import imagesearch.comparator.ComparatorService;
 import imagesearch.source.SourceImageFactory;
-import imagesearch.source.SourceImageFactoryTest;
 import imagesearch.source.SourceImageService;
 import org.junit.Test;
 import org.junit.runner.RunWith;

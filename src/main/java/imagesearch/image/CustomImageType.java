@@ -1,10 +1,15 @@
 package imagesearch.image;
 
+import java.awt.image.BufferedImage;
+
 public class CustomImageType {
-    private int averageRgb;
+
+    public CustomImageType(BufferedImage read) {
+        throw new UnsupportedOperationException();
+    }
 
     public int getAverageRgb() {
-        return averageRgb;
+        throw new UnsupportedOperationException();
     }
 
     public String getImageLocation() {

@@ -1,7 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="b46d1bc6-559f-45eb-94c1-a22095c4eabe" name="Default" comment="" />
+    <list default="true" id="b46d1bc6-559f-45eb-94c1-a22095c4eabe" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/imagesearch/ImageComparator.java" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/test-classes/imagesearch/ComparatorServiceTest.class" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/imagesearch/image/CustomImageType.class" afterPath="$PROJECT_DIR$/target/classes/imagesearch/image/CustomImageType.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/image-clone-finder.iml" afterPath="$PROJECT_DIR$/image-clone-finder.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pom.xml" afterPath="$PROJECT_DIR$/pom.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/imagesearch/ComparatorService.java" afterPath="$PROJECT_DIR$/src/main/java/imagesearch/ComparatorService.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/imagesearch/image/CustomImageType.java" afterPath="$PROJECT_DIR$/src/main/java/imagesearch/image/CustomImageType.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/java/imagesearch/ComparatorServiceTest.java" afterPath="$PROJECT_DIR$/src/test/java/imagesearch/ComparatorServiceTest.java" />
+    </list>
     <ignored path="image-clone-finder.iws" />
     <ignored path=".idea/workspace.xml" />
     <ignored path="$PROJECT_DIR$/out/" />
@@ -26,8 +36,8 @@
       <file leaf-file-name="ComparatorServiceTest.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/test/java/imagesearch/ComparatorServiceTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="510">
-              <caret line="72" column="39" selection-start-line="72" selection-start-column="39" selection-end-line="72" selection-end-column="39" />
+            <state relative-caret-position="462">
+              <caret line="21" column="4" selection-start-line="21" selection-start-column="4" selection-end-line="21" selection-end-column="4" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -35,25 +45,31 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Report.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/imagesearch/Report.java">
+      <file leaf-file-name="CustomImageType.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/imagesearch/image/CustomImageType.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="268">
-              <caret line="22" column="5" selection-start-line="22" selection-start-column="5" selection-end-line="22" selection-end-column="5" />
+            <state relative-caret-position="242">
+              <caret line="11" column="50" selection-start-line="11" selection-start-column="50" selection-end-line="11" selection-end-column="50" />
               <folding>
-                <element signature="e#931#932#0" expanded="true" />
-                <element signature="e#992#993#0" expanded="true" />
+                <element signature="e#145#146#0" expanded="true" />
+                <element signature="e#202#203#0" expanded="true" />
+                <element signature="e#236#237#0" expanded="true" />
+                <element signature="e#293#294#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ComparatorService.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/imagesearch/ComparatorService.java">
+      <file leaf-file-name="ImageComparator.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/imagesearch/comparator/ImageComparator.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="422">
-              <caret line="24" column="49" selection-start-line="24" selection-start-column="49" selection-end-line="24" selection-end-column="49" />
-              <folding />
+            <state relative-caret-position="506">
+              <caret line="23" column="50" selection-start-line="23" selection-start-column="50" selection-end-line="23" selection-end-column="50" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#352#353#0" expanded="true" />
+                <element signature="e#406#407#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -67,6 +83,9 @@
       </list>
     </option>
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
   <component name="GradleLocalSettings">
     <option name="externalProjectsViewState">
       <projects_view />
@@ -75,7 +94,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/src/main/java/imagesearch/Main.java" />
         <option value="$PROJECT_DIR$/src/test/java/imagesearch/MainServiceTst.java" />
         <option value="$PROJECT_DIR$/src/main/java/imagesearch/SourceImageFactory.java" />
@@ -92,10 +110,14 @@
         <option value="$PROJECT_DIR$/src/main/java/imagesearch/LocalImageStream.java" />
         <option value="$PROJECT_DIR$/src/main/java/imagesearch/TargetImageSourceService.java" />
         <option value="$PROJECT_DIR$/src/main/java/imagesearch/image/LocalImageStream.java" />
-        <option value="$PROJECT_DIR$/src/main/java/imagesearch/image/CustomImageType.java" />
-        <option value="$PROJECT_DIR$/src/main/java/imagesearch/ComparatorService.java" />
         <option value="$PROJECT_DIR$/src/main/java/imagesearch/source/WindowsFileLocation.java" />
         <option value="$PROJECT_DIR$/src/main/java/imagesearch/Report.java" />
+        <option value="$PROJECT_DIR$/pom.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/imagesearch/ComparatorService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/imagesearch/ImageComparator.java" />
+        <option value="$PROJECT_DIR$/src/main/java/imagesearch/comparator/ImageComparator.java" />
+        <option value="$PROJECT_DIR$/src/main/java/imagesearch/comparator/ComparatorService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/imagesearch/image/CustomImageType.java" />
         <option value="$PROJECT_DIR$/src/test/java/imagesearch/ComparatorServiceTest.java" />
       </list>
     </option>
@@ -225,6 +247,28 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="resources" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="image-clone-finder" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="image-clone-finder" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="test" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="java" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -333,7 +377,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="source" />
+              <option name="myItemId" value="image" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -363,7 +407,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="image" />
+              <option name="myItemId" value="comparator" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -382,74 +426,24 @@
     <property name="project.structure.last.edited" value="SDKs" />
     <property name="project.structure.proportion" value="0.1515625" />
     <property name="project.structure.side.proportion" value="0.2" />
+    <property name="SearchEverywhereHistoryKey" value="pom&#9;FILE&#9;file://C:/Users/aistratii/Desktop/image-clone-finder/pom.xml" />
   </component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
       <recent name="imagesearch" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\aistratii\Desktop\image-clone-finder\src\test\java" />
       <recent name="C:\Users\aistratii\Desktop\image-clone-finder\src\test" />
+      <recent name="C:\Users\aistratii\Desktop\image-clone-finder\src\test\java\resources" />
+      <recent name="C:\Users\aistratii\Desktop\image-clone-finder\src\test\java" />
       <recent name="C:\Users\aistratii\Desktop\image-clone-finder\src\main\java" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.ComparatorServiceTest.compareTestMatchNotFound">
-    <configuration default="false" name="SourceImageFactoryTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
-        <pattern>
-          <option name="PATTERN" value="imagesearch.source.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <module name="image-clone-finder" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PACKAGE_NAME" value="imagesearch.source" />
-      <option name="MAIN_CLASS_NAME" value="imagesearch.source.SourceImageFactoryTest" />
-      <option name="METHOD_NAME" />
-      <option name="TEST_OBJECT" value="class" />
-      <option name="VM_PARAMETERS" value="-ea" />
-      <option name="PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="singleModule" />
-      </option>
-      <envs />
-      <patterns />
-      <method />
-    </configuration>
-    <configuration default="false" name="ComparatorServiceTest.compareTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
-        <pattern>
-          <option name="PATTERN" value="imagesearch.image.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <module name="image-clone-finder" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PACKAGE_NAME" value="imagesearch" />
-      <option name="MAIN_CLASS_NAME" value="imagesearch.ComparatorServiceTest" />
-      <option name="METHOD_NAME" value="compareTest" />
-      <option name="TEST_OBJECT" value="method" />
-      <option name="VM_PARAMETERS" value="-ea" />
-      <option name="PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="singleModule" />
-      </option>
-      <envs />
-      <patterns />
-      <method />
-    </configuration>
+  <component name="RunManager" selected="JUnit.ComparatorServiceTest">
     <configuration default="false" name="ComparatorServiceTest.compareTestMathcFound" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
-          <option name="PATTERN" value="imagesearch.*" />
+          <option name="PATTERN" value="imagesearch.comparator.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -475,7 +469,7 @@
     <configuration default="false" name="ComparatorServiceTest.compareTestMatchFound" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
-          <option name="PATTERN" value="imagesearch.*" />
+          <option name="PATTERN" value="imagesearch.comparator.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -501,7 +495,7 @@
     <configuration default="false" name="ComparatorServiceTest.compareTestMatchNotFound" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
-          <option name="PATTERN" value="imagesearch.*" />
+          <option name="PATTERN" value="imagesearch.comparator.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -512,6 +506,58 @@
       <option name="MAIN_CLASS_NAME" value="imagesearch.ComparatorServiceTest" />
       <option name="METHOD_NAME" value="compareTestMatchNotFound" />
       <option name="TEST_OBJECT" value="method" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <envs />
+      <patterns />
+      <method />
+    </configuration>
+    <configuration default="false" name="ComparatorServiceTest.compareTestImageCompareMatchFound" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
+        <pattern>
+          <option name="PATTERN" value="imagesearch.comparator.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <module name="image-clone-finder" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" value="imagesearch" />
+      <option name="MAIN_CLASS_NAME" value="imagesearch.ComparatorServiceTest" />
+      <option name="METHOD_NAME" value="compareTestImageCompareMatchFound" />
+      <option name="TEST_OBJECT" value="method" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <envs />
+      <patterns />
+      <method />
+    </configuration>
+    <configuration default="false" name="ComparatorServiceTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
+        <pattern>
+          <option name="PATTERN" value="imagesearch.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <module name="image-clone-finder" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" value="imagesearch" />
+      <option name="MAIN_CLASS_NAME" value="imagesearch.ComparatorServiceTest" />
+      <option name="METHOD_NAME" />
+      <option name="TEST_OBJECT" value="class" />
       <option name="VM_PARAMETERS" value="-ea" />
       <option name="PARAMETERS" />
       <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
@@ -984,19 +1030,19 @@
       <method />
     </configuration>
     <list size="5">
-      <item index="0" class="java.lang.String" itemvalue="JUnit.SourceImageFactoryTest" />
-      <item index="1" class="java.lang.String" itemvalue="JUnit.ComparatorServiceTest.compareTest" />
-      <item index="2" class="java.lang.String" itemvalue="JUnit.ComparatorServiceTest.compareTestMathcFound" />
-      <item index="3" class="java.lang.String" itemvalue="JUnit.ComparatorServiceTest.compareTestMatchFound" />
-      <item index="4" class="java.lang.String" itemvalue="JUnit.ComparatorServiceTest.compareTestMatchNotFound" />
+      <item index="0" class="java.lang.String" itemvalue="JUnit.ComparatorServiceTest.compareTestMathcFound" />
+      <item index="1" class="java.lang.String" itemvalue="JUnit.ComparatorServiceTest.compareTestMatchFound" />
+      <item index="2" class="java.lang.String" itemvalue="JUnit.ComparatorServiceTest.compareTestMatchNotFound" />
+      <item index="3" class="java.lang.String" itemvalue="JUnit.ComparatorServiceTest.compareTestImageCompareMatchFound" />
+      <item index="4" class="java.lang.String" itemvalue="JUnit.ComparatorServiceTest" />
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="JUnit.ComparatorServiceTest.compareTestMatchNotFound" />
-        <item index="1" class="java.lang.String" itemvalue="JUnit.ComparatorServiceTest.compareTestMatchFound" />
-        <item index="2" class="java.lang.String" itemvalue="JUnit.ComparatorServiceTest.compareTestMathcFound" />
-        <item index="3" class="java.lang.String" itemvalue="JUnit.ComparatorServiceTest.compareTest" />
-        <item index="4" class="java.lang.String" itemvalue="JUnit.SourceImageFactoryTest" />
+        <item index="0" class="java.lang.String" itemvalue="JUnit.ComparatorServiceTest" />
+        <item index="1" class="java.lang.String" itemvalue="JUnit.ComparatorServiceTest.compareTestImageCompareMatchFound" />
+        <item index="2" class="java.lang.String" itemvalue="JUnit.ComparatorServiceTest.compareTestMatchNotFound" />
+        <item index="3" class="java.lang.String" itemvalue="JUnit.ComparatorServiceTest.compareTestMatchFound" />
+        <item index="4" class="java.lang.String" itemvalue="JUnit.ComparatorServiceTest.compareTestMathcFound" />
       </list>
     </recent_temporary>
   </component>
@@ -1021,44 +1067,44 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1517837659473</updated>
-      <workItem from="1517837670811" duration="9556000" />
+      <workItem from="1517837670811" duration="11711000" />
     </task>
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="ComparatorServiceTest_compareTestMatchFound - 2018.02.06 at 10h 50m 36s.xml">
-      <configuration name="ComparatorServiceTest.compareTestMatchFound" configurationId="JUnit" />
+    <history-entry file="ComparatorServiceTest - 2018.02.06 at 11h 28m 10s.xml">
+      <configuration name="ComparatorServiceTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="ComparatorServiceTest_compareTestMatchFound - 2018.02.06 at 10h 51m 04s.xml">
-      <configuration name="ComparatorServiceTest.compareTestMatchFound" configurationId="JUnit" />
+    <history-entry file="ComparatorServiceTest_compareTestImageCompareMatchFound - 2018.02.06 at 11h 03m 44s.xml">
+      <configuration name="ComparatorServiceTest.compareTestImageCompareMatchFound" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="ComparatorServiceTest_compareTestMatchNotFound - 2018.02.06 at 10h 52m 48s.xml">
-      <configuration name="ComparatorServiceTest.compareTestMatchNotFound" configurationId="JUnit" />
+    <history-entry file="ComparatorServiceTest_compareTestImageCompareMatchFound - 2018.02.06 at 11h 03m 56s.xml">
+      <configuration name="ComparatorServiceTest.compareTestImageCompareMatchFound" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="ComparatorServiceTest_compareTestMatchNotFound - 2018.02.06 at 10h 52m 58s.xml">
-      <configuration name="ComparatorServiceTest.compareTestMatchNotFound" configurationId="JUnit" />
+    <history-entry file="ComparatorServiceTest_compareTestImageCompareMatchFound - 2018.02.06 at 11h 04m 11s.xml">
+      <configuration name="ComparatorServiceTest.compareTestImageCompareMatchFound" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="ComparatorServiceTest_compareTestMathcFound - 2018.02.06 at 10h 45m 57s.xml">
-      <configuration name="ComparatorServiceTest.compareTestMathcFound" configurationId="JUnit" />
+    <history-entry file="ComparatorServiceTest_compareTestImageCompareMatchFound - 2018.02.06 at 11h 04m 38s.xml">
+      <configuration name="ComparatorServiceTest.compareTestImageCompareMatchFound" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="ComparatorServiceTest_compareTestMathcFound - 2018.02.06 at 10h 46m 34s.xml">
-      <configuration name="ComparatorServiceTest.compareTestMathcFound" configurationId="JUnit" />
+    <history-entry file="ComparatorServiceTest_compareTestImageCompareMatchFound - 2018.02.06 at 11h 04m 44s.xml">
+      <configuration name="ComparatorServiceTest.compareTestImageCompareMatchFound" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="ComparatorServiceTest_compareTestMathcFound - 2018.02.06 at 10h 46m 59s.xml">
-      <configuration name="ComparatorServiceTest.compareTestMathcFound" configurationId="JUnit" />
+    <history-entry file="ComparatorServiceTest_compareTestImageCompareMatchFound - 2018.02.06 at 11h 06m 04s.xml">
+      <configuration name="ComparatorServiceTest.compareTestImageCompareMatchFound" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="ComparatorServiceTest_compareTestMathcFound - 2018.02.06 at 10h 47m 13s.xml">
-      <configuration name="ComparatorServiceTest.compareTestMathcFound" configurationId="JUnit" />
+    <history-entry file="ComparatorServiceTest_compareTestImageCompareMatchFound - 2018.02.06 at 11h 06m 44s.xml">
+      <configuration name="ComparatorServiceTest.compareTestImageCompareMatchFound" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="ComparatorServiceTest_compareTestMathcFound - 2018.02.06 at 10h 48m 16s.xml">
-      <configuration name="ComparatorServiceTest.compareTestMathcFound" configurationId="JUnit" />
+    <history-entry file="ComparatorServiceTest_compareTestImageCompareMatchFound - 2018.02.06 at 11h 07m 47s.xml">
+      <configuration name="ComparatorServiceTest.compareTestImageCompareMatchFound" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="ComparatorServiceTest_compareTestMathcFound - 2018.02.06 at 10h 48m 46s.xml">
-      <configuration name="ComparatorServiceTest.compareTestMathcFound" configurationId="JUnit" />
+    <history-entry file="ComparatorServiceTest_compareTestImageCompareMatchFound - 2018.02.06 at 11h 10m 34s.xml">
+      <configuration name="ComparatorServiceTest.compareTestImageCompareMatchFound" configurationId="JUnit" />
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="9556000" />
+    <option name="totallyTimeSpent" value="11711000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-9" y="-9" width="1938" height="1048" extended-state="6" />
@@ -1074,7 +1120,7 @@
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4348811" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3295583" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24946351" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -1121,14 +1167,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="70">
-          <caret line="9" column="0" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/imagesearch/Main.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="373">
@@ -1190,8 +1228,8 @@
         <state relative-caret-position="308">
           <caret line="20" column="29" selection-start-line="20" selection-start-column="29" selection-end-line="20" selection-end-column="29" />
           <folding>
-            <element signature="e#712#713#0" expanded="true" />
-            <element signature="e#758#759#0" expanded="true" />
+            <element signature="e#761#762#0" expanded="true" />
+            <element signature="e#807#808#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1275,16 +1313,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/imagesearch/image/CustomImageType.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="176">
-          <caret line="10" column="0" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
-          <folding>
-            <element signature="e#249#250#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/imagesearch/MainService.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="308">
@@ -1293,17 +1321,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/imagesearch/ComparatorService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="422">
-          <caret line="24" column="49" selection-start-line="24" selection-start-column="49" selection-end-line="24" selection-end-column="49" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/imagesearch/Report.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="268">
+        <state relative-caret-position="352">
           <caret line="22" column="5" selection-start-line="22" selection-start-column="5" selection-end-line="22" selection-end-column="5" />
           <folding>
             <element signature="e#931#932#0" expanded="true" />
@@ -1312,10 +1332,51 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="241">
+          <caret line="60" column="21" selection-start-line="60" selection-start-column="21" selection-end-line="60" selection-end-column="21" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/imagesearch/comparator/ImageComparator.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="506">
+          <caret line="23" column="50" selection-start-line="23" selection-start-column="50" selection-end-line="23" selection-end-column="50" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#352#353#0" expanded="true" />
+            <element signature="e#406#407#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/imagesearch/comparator/ComparatorService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="374">
+          <caret line="28" column="44" selection-start-line="28" selection-start-column="44" selection-end-line="28" selection-end-column="44" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/imagesearch/image/CustomImageType.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="242">
+          <caret line="11" column="50" selection-start-line="11" selection-start-column="50" selection-end-line="11" selection-end-column="50" />
+          <folding>
+            <element signature="e#145#146#0" expanded="true" />
+            <element signature="e#202#203#0" expanded="true" />
+            <element signature="e#236#237#0" expanded="true" />
+            <element signature="e#293#294#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/imagesearch/ComparatorServiceTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="510">
-          <caret line="72" column="39" selection-start-line="72" selection-start-column="39" selection-end-line="72" selection-end-column="39" />
+        <state relative-caret-position="462">
+          <caret line="21" column="4" selection-start-line="21" selection-start-column="4" selection-end-line="21" selection-end-column="4" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>

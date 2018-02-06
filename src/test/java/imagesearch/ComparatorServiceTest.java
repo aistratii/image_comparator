@@ -1,5 +1,7 @@
 package imagesearch;
 
+import imagesearch.comparator.ComparatorService;
+import imagesearch.comparator.ImageComparator;
 import imagesearch.image.CustomImageType;
 import imagesearch.image.LocalImageStream;
 import imagesearch.source.SourceImageService;
@@ -18,7 +20,6 @@ import static org.mockito.Mockito.*;
 @RunWith(MockitoJUnitRunner.class)
 public class ComparatorServiceTest {
 
-    @Spy
     @InjectMocks
     private ComparatorService comparatorService;
 
@@ -30,6 +31,9 @@ public class ComparatorServiceTest {
 
     @Mock
     private ReportService reportService;
+
+    @Mock
+    private ImageComparator imageComparator;
 
     @Test
     public void compareTestMatchFound(){
@@ -49,7 +53,7 @@ public class ComparatorServiceTest {
         when(sourceImage.getImageLocation()).thenReturn("source location");
         when(targetImage.getImageLocation()).thenReturn("target location");
 
-        doReturn(true).when(comparatorService).compare(sourceImage, targetImage);
+        when(imageComparator.compare(sourceImage, targetImage)).thenReturn(true);
 
         comparatorService.compare(sourceService, targetService);
 
@@ -70,7 +74,7 @@ public class ComparatorServiceTest {
         when(localImageStream.hasNext()).thenReturn(true).thenReturn(false);
         when(localImageStream.getNext()).thenReturn(targetImage);
 
-        doReturn(false).when(comparatorService).compare(sourceImage, targetImage);
+        when(imageComparator.compare(sourceImage, targetImage)).thenReturn(false);
 
         comparatorService.compare(sourceService, targetService);
 
