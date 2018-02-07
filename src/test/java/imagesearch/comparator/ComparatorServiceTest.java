@@ -1,5 +1,8 @@
-package imagesearch;
+package imagesearch.comparator;
 
+import imagesearch.Report;
+import imagesearch.ReportService;
+import imagesearch.TargetImageSourceService;
 import imagesearch.comparator.ComparatorService;
 import imagesearch.comparator.ImageComparator;
 import imagesearch.image.CustomImageType;
@@ -45,7 +48,7 @@ public class ComparatorServiceTest {
         when(sourceImage.getAverageRgb()).thenReturn(100);
 
         when(sourceService.getNextImage()).thenReturn(sourceImage);
-        when(targetService.getStreamForRgb(eq(100), anyInt())).thenReturn(localImageStream);
+        when(targetService.getStreamForRgb(eq(100))).thenReturn(localImageStream);
 
         when(localImageStream.hasNext()).thenReturn(true).thenReturn(false);
         when(localImageStream.getNext()).thenReturn(targetImage);
@@ -69,7 +72,7 @@ public class ComparatorServiceTest {
         when(sourceImage.getAverageRgb()).thenReturn(100);
 
         when(sourceService.getNextImage()).thenReturn(sourceImage);
-        when(targetService.getStreamForRgb(eq(100), anyInt())).thenReturn(localImageStream);
+        when(targetService.getStreamForRgb(eq(100))).thenReturn(localImageStream);
 
         when(localImageStream.hasNext()).thenReturn(true).thenReturn(false);
         when(localImageStream.getNext()).thenReturn(targetImage);

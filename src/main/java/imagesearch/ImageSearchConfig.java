@@ -1,9 +1,12 @@
 package imagesearch;
 
+import imagesearch.comparator.ComparatorCache;
 import imagesearch.comparator.ComparatorService;
+import imagesearch.comparator.ImageComparator;
 import imagesearch.source.SourceImageFactory;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.Scope;
 
 @Configuration
 public class ImageSearchConfig {
@@ -31,5 +34,17 @@ public class ImageSearchConfig {
     @Bean
     public ComparatorService comparatorService(){
         return new ComparatorService();
+    }
+
+    @Scope("prototype")
+    @Bean
+    public ImageComparator imageComparator(ComparatorCache comparatorCache){
+        return new ImageComparator(comparatorCache);
+    }
+
+    @Scope("prototype")
+    @Bean
+    public ComparatorCache comparatorCache(){
+        return new ComparatorCache();
     }
 }
