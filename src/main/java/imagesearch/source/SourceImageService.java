@@ -5,4 +5,6 @@ import imagesearch.image.CustomImageType;
 
 public interface SourceImageService {
     CustomImageType getNextImage();
+
+    boolean hasNextImage();
 }

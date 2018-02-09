@@ -24,19 +24,20 @@ public class ComparatorService {
     private ReportService reportService;
 
     public void compare(SourceImageService source, TargetImageSourceService target) {
-        CustomImageType sourceImage = source.getNextImage();
+        while(source.hasNextImage()) {
+            CustomImageType sourceImage = source.getNextImage();
 
-        LocalImageStream localImageStream = target.getStreamForRgb(sourceImage.getAverageRgb());
+            LocalImageStream localImageStream = target.getStreamForRgb(sourceImage.getAverageRgb());
 
-        while(localImageStream.hasNext()){
-            CustomImageType targetImage = localImageStream.getNext();
+            while (localImageStream.hasNext()) {
+                CustomImageType targetImage = localImageStream.getNext();
 
-            if(imageComparator.compare(sourceImage, targetImage)) {
-                reportService.persistReport(new Report(sourceImage, targetImage));
-                break;
+                if (imageComparator.compare(sourceImage, targetImage)) {
+                    reportService.persistReport(new Report(sourceImage, targetImage));
+                    break;
+                }
             }
         }
-
     }
 
 }

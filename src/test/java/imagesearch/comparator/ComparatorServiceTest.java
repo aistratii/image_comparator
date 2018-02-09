@@ -48,6 +48,7 @@ public class ComparatorServiceTest {
         when(sourceImage.getAverageRgb()).thenReturn(100);
 
         when(sourceService.getNextImage()).thenReturn(sourceImage);
+        when(sourceService.hasNextImage()).thenReturn(true).thenReturn(false);
         when(targetService.getStreamForRgb(eq(100))).thenReturn(localImageStream);
 
         when(localImageStream.hasNext()).thenReturn(true).thenReturn(false);
@@ -72,6 +73,7 @@ public class ComparatorServiceTest {
         when(sourceImage.getAverageRgb()).thenReturn(100);
 
         when(sourceService.getNextImage()).thenReturn(sourceImage);
+        when(sourceService.hasNextImage()).thenReturn(true).thenReturn(false);
         when(targetService.getStreamForRgb(eq(100))).thenReturn(localImageStream);
 
         when(localImageStream.hasNext()).thenReturn(true).thenReturn(false);
