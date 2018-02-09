@@ -18,7 +18,7 @@ public class ImageSearchConfig {
 
     @Bean
     public ReportService reportService(){
-        return new ReportService();
+        return new ReportService("D:\\tmp\\reports");
     }
 
     @Bean
