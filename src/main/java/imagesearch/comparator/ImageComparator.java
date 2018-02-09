@@ -5,6 +5,7 @@ import org.apache.commons.lang3.tuple.Pair;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
+import java.awt.image.BufferedImage;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.TimeUnit;
@@ -80,7 +81,34 @@ public class ImageComparator {
 
 
     //perhaps will be better to reuse some array instead of new object delcaration => less strain on jvm
+    //TODO: need to optimize otherwise heap overflow
     public Pair<CustomImageType, CustomImageType> matchSize(CustomImageType sourceImage, CustomImageType targetImage) {
-        throw new UnsupportedOperationException();
+        //priroty by width:
+        int width = max(sourceImage.getWidth(), targetImage.getWidth());
+
+        CustomImageType sizedSourceImage, sizedTargetImage;
+
+        if (sourceImage.getWidth() < width){
+            int newHeight = (int)(((float)targetImage.getHeight() / (float)targetImage.getWidth()) * width);
+            sizedSourceImage = new CustomImageType(width, newHeight, 1);
+
+            sizedSourceImage
+                    .getGraphics()
+                    .drawImage(sourceImage, 0, 0, sizedSourceImage.getWidth(), sizedSourceImage.getHeight(), null);
+        } else
+            sizedSourceImage = sourceImage;
+
+
+        if (targetImage.getWidth() < width){
+            int newHeight = (int)(((float)targetImage.getHeight() / (float)targetImage.getWidth()) * width);
+            sizedTargetImage = new CustomImageType(width, newHeight, 1);
+
+            sizedTargetImage
+                    .getGraphics()
+                    .drawImage(sourceImage, 0, 0, sizedTargetImage.getWidth(), sizedTargetImage.getHeight(), null);
+        } else
+            sizedTargetImage = sourceImage;
+
+        return Pair.of(sizedSourceImage, sizedTargetImage);
     }
 }
