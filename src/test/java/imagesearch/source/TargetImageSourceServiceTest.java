@@ -1,6 +1,6 @@
 package imagesearch.source;
 
-import imagesearch.DataBaseService;
+import imagesearch.persistance.DataBaseService;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.InjectMocks;
