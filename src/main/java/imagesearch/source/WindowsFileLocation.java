@@ -26,15 +26,15 @@ public class WindowsFileLocation implements SourceImageService {
         File file = new File(source);
         if (file.isDirectory())
             stream(file.list())
-                    .forEach(fileList::push);
+                    .forEach(fileName -> fileList.push(source + File.separator + fileName));
         else
-            fileList.push(file.getName());
+            fileList.push(source);
     }
 
     @Override
     public CustomImageType getNextImage() {
         try {
-            BufferedImage bufferedImage = ImageIO.read(new File(fileSourcePath + File.separator +fileList.pop()));
+            BufferedImage bufferedImage = ImageIO.read(new File(fileList.pop()));
             CustomImageType customImageType = new CustomImageType(bufferedImage.getWidth(), bufferedImage.getHeight(), 1);
             customImageType.getGraphics().drawImage(customImageType, 0, 0, null);
 

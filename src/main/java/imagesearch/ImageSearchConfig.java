@@ -4,6 +4,7 @@ import imagesearch.comparator.ComparatorCache;
 import imagesearch.comparator.ComparatorService;
 import imagesearch.comparator.ImageComparator;
 import imagesearch.source.SourceImageFactory;
+import imagesearch.source.TargetImageSourceService;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Scope;

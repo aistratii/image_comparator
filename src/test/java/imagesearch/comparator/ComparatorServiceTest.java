@@ -2,9 +2,7 @@ package imagesearch.comparator;
 
 import imagesearch.Report;
 import imagesearch.ReportService;
-import imagesearch.TargetImageSourceService;
-import imagesearch.comparator.ComparatorService;
-import imagesearch.comparator.ImageComparator;
+import imagesearch.source.TargetImageSourceService;
 import imagesearch.image.CustomImageType;
 import imagesearch.image.LocalImageStream;
 import imagesearch.source.SourceImageService;
@@ -12,11 +10,9 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
-import org.mockito.Spy;
 import org.mockito.runners.MockitoJUnitRunner;
 
 import static org.mockito.Matchers.any;
-import static org.mockito.Matchers.anyInt;
 import static org.mockito.Matchers.eq;
 import static org.mockito.Mockito.*;
 

@@ -16,10 +16,6 @@ public class ReportService {
         this.reportDirectory = reportDirectory;
     }
 
-    public List<Report> getReports() {
-        throw new NotImplementedException();
-    }
-
     synchronized public void persistReport(Report report) {
         try {
             FileOutputStream fout = new FileOutputStream(reportDirectory + File.separator + "report_" + counter++ + ".txt");

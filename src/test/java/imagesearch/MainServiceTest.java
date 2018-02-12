@@ -3,6 +3,7 @@ package imagesearch;
 import imagesearch.comparator.ComparatorService;
 import imagesearch.source.SourceImageFactory;
 import imagesearch.source.SourceImageService;
+import imagesearch.source.TargetImageSourceService;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.InjectMocks;

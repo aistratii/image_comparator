@@ -39,6 +39,19 @@ public class WindowsFileLocationTest {
     }
 
     @Test
+    public void getNextImageTestSingleFile() throws IOException {
+        WindowsFileLocation windowsFileLocation = new WindowsFileLocation("C:\\Users\\aistratii\\Desktop\\image-clone-finder\\src\\test\\resources\\img1.jpg");
+        final String imagePath1 = ImageComparatorTest.class.getClassLoader().getResource("img1.jpg").getFile().toString();
+
+        final BufferedImage image1 = ImageIO.read(new File(imagePath1));
+        final CustomImageType customImage1 = new CustomImageType(image1.getWidth(), image1.getHeight(), 1);
+
+        customImage1.createGraphics().drawImage(image1, 0, 0, null);
+
+        assertEquals(customImage1, windowsFileLocation.getNextImage());
+    }
+
+    @Test
     public void getNextImageFail() throws IOException {
         WindowsFileLocation windowsFileLocation = new WindowsFileLocation("sada");
 
