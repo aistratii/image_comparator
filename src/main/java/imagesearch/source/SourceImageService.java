@@ -3,8 +3,6 @@ package imagesearch.source;
 import imagesearch.image.CustomImageType;
 
 
-public interface SourceImageService {
-    CustomImageType getNextImage();
+public interface SourceImageService extends ImageStream{
 
-    boolean hasNextImage();
 }

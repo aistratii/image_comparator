@@ -2,9 +2,9 @@ package imagesearch.comparator;
 
 import imagesearch.Report;
 import imagesearch.ReportService;
+import imagesearch.source.ImageStream;
 import imagesearch.source.TargetImageSourceService;
 import imagesearch.image.CustomImageType;
-import imagesearch.image.LocalImageStream;
 import imagesearch.source.SourceImageService;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -39,12 +39,12 @@ public class ComparatorServiceTest {
         final Report report = new Report("[possibly match] source: source location, target: target location");
         final CustomImageType sourceImage = mock(CustomImageType.class);
         final CustomImageType targetImage = mock(CustomImageType.class);
-        final LocalImageStream localImageStream = mock(LocalImageStream.class);
+        final ImageStream localImageStream = mock(ImageStream.class);
 
         when(sourceImage.getAverageRgb()).thenReturn(100);
 
-        when(sourceService.getNextImage()).thenReturn(sourceImage);
-        when(sourceService.hasNextImage()).thenReturn(true).thenReturn(false);
+        when(sourceService.getNext()).thenReturn(sourceImage);
+        when(sourceService.hasNext()).thenReturn(true).thenReturn(false);
         when(targetService.getStreamForRgb(eq(100))).thenReturn(localImageStream);
 
         when(localImageStream.hasNext()).thenReturn(true).thenReturn(false);
@@ -64,12 +64,12 @@ public class ComparatorServiceTest {
     public void compareTestMatchNotFound(){
         final CustomImageType sourceImage = mock(CustomImageType.class);
         final CustomImageType targetImage = mock(CustomImageType.class);
-        final LocalImageStream localImageStream = mock(LocalImageStream.class);
+        final ImageStream localImageStream = mock(ImageStream.class);
 
         when(sourceImage.getAverageRgb()).thenReturn(100);
 
-        when(sourceService.getNextImage()).thenReturn(sourceImage);
-        when(sourceService.hasNextImage()).thenReturn(true).thenReturn(false);
+        when(sourceService.getNext()).thenReturn(sourceImage);
+        when(sourceService.hasNext()).thenReturn(true).thenReturn(false);
         when(targetService.getStreamForRgb(eq(100))).thenReturn(localImageStream);
 
         when(localImageStream.hasNext()).thenReturn(true).thenReturn(false);

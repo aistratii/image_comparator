@@ -2,9 +2,9 @@ package imagesearch.comparator;
 
 import imagesearch.Report;
 import imagesearch.ReportService;
+import imagesearch.source.ImageStream;
 import imagesearch.source.TargetImageSourceService;
 import imagesearch.image.CustomImageType;
-import imagesearch.image.LocalImageStream;
 import imagesearch.source.SourceImageService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
@@ -20,10 +20,10 @@ public class ComparatorService {
     private ReportService reportService;
 
     public void compare(SourceImageService source, TargetImageSourceService target) {
-        while(source.hasNextImage()) {
-            CustomImageType sourceImage = source.getNextImage();
+        while(source.hasNext()) {
+            CustomImageType sourceImage = source.getNext();
 
-            LocalImageStream localImageStream = target.getStreamForRgb(sourceImage.getAverageRgb());
+            ImageStream localImageStream = target.getStreamForRgb(sourceImage.getAverageRgb());
 
             while (localImageStream.hasNext()) {
                 CustomImageType targetImage = localImageStream.getNext();

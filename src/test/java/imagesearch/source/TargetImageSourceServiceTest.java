@@ -1,7 +1,6 @@
 package imagesearch.source;
 
 import imagesearch.DataBaseService;
-import imagesearch.image.LocalImageStream;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.InjectMocks;
@@ -34,7 +33,7 @@ public class TargetImageSourceServiceTest {
         int rgb = 10;
         List<String> fileNames = asList(TargetImageSourceServiceTest.class.getClassLoader().getResource("img1.jpg").toURI().toString());
 
-        LocalImageStream localImageStream = new LocalImageStream(fileNames);
+        ImageStream localImageStream = new WindowsFileLocation(fileNames);
 
         when(dbService.getImagesWithRgb(rgb)).thenReturn(fileNames);
 

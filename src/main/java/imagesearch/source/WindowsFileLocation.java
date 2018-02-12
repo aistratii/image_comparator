@@ -14,14 +14,11 @@ import java.util.Stack;
 
 import static java.util.Arrays.stream;
 
-public class WindowsFileLocation implements SourceImageService {
-    private final String fileSourcePath;
+public class WindowsFileLocation implements SourceImageService, ImageStream {
     private Stack<String> fileList;
 
     public WindowsFileLocation(String source) {
         fileList = new Stack<>();
-
-        this.fileSourcePath = source;
 
         File file = new File(source);
         if (file.isDirectory())
@@ -31,8 +28,16 @@ public class WindowsFileLocation implements SourceImageService {
             fileList.push(source);
     }
 
+    public WindowsFileLocation(List<String> fileLocations){
+        fileList = new Stack<>();
+
+        fileLocations.
+                stream()
+                .forEach(fileList::push);
+    }
+
     @Override
-    public CustomImageType getNextImage() {
+    public CustomImageType getNext() {
         try {
             BufferedImage bufferedImage = ImageIO.read(new File(fileList.pop()));
             CustomImageType customImageType = new CustomImageType(bufferedImage.getWidth(), bufferedImage.getHeight(), 1);
@@ -47,7 +52,23 @@ public class WindowsFileLocation implements SourceImageService {
     }
 
     @Override
-    public boolean hasNextImage() {
+    public boolean hasNext() {
         return !fileList.empty();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+
+        WindowsFileLocation that = (WindowsFileLocation) o;
+
+        return fileList != null ? fileList.equals(that.fileList) : that.fileList == null;
+
+    }
+
+    @Override
+    public int hashCode() {
+        return fileList != null ? fileList.hashCode() : 0;
     }
 }
