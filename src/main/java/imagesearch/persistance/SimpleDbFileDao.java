@@ -58,6 +58,7 @@ public class SimpleDbFileDao implements Dao {
         }
     }
 
+    @Override
     public void update(CustomImageType customImageType){
         if (allDbModel.getRgbDbModel().get(customImageType.getAverageRgb()) == null)
             allDbModel.getRgbDbModel().put(customImageType.getAverageRgb(), new ArrayList<>());
