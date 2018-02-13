@@ -1,7 +1,5 @@
 package imagesearch.persistance;
 
-import imagesearch.persistance.Dao;
-import imagesearch.persistance.LocalFileDao;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
@@ -16,10 +14,6 @@ public class DataBaseService {
     private Dao dao;
 
     public List<String> getImagesWithRgb(int averageRgb) {
-        return dao.getForRgb(averageRgb)
-                .stream()
-                .map(model -> model.getFileLocations())
-                .flatMap(List::stream)
-                .collect(toList());
+        return dao.getForRgb(averageRgb);
     }
 }

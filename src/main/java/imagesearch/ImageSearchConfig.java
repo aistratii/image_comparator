@@ -4,7 +4,7 @@ import imagesearch.comparator.ComparatorCache;
 import imagesearch.comparator.ComparatorService;
 import imagesearch.comparator.ImageComparator;
 import imagesearch.persistance.Dao;
-import imagesearch.persistance.LocalFileDao;
+import imagesearch.persistance.SimpleDbFileDao;
 import imagesearch.source.SourceImageFactory;
 import imagesearch.source.TargetImageSourceService;
 import org.springframework.context.annotation.Bean;
@@ -53,6 +53,6 @@ public class ImageSearchConfig {
 
     @Bean
     public Dao dao(){
-        return new LocalFileDao();
+        return new SimpleDbFileDao();
     }
 }
