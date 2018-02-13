@@ -1,5 +1,6 @@
 package imagesearch.persistance;
 
+import com.fasterxml.jackson.databind.ObjectMapper;
 import imagesearch.image.CustomImageType;
 import imagesearch.persistance.model.AllDbModel;
 import org.springframework.stereotype.Component;
@@ -14,6 +15,8 @@ public class SimpleDbFileDao implements Dao {
     private AllDbModel allDbModel;
     public final static String DB_MODEL_FILE_NAME = "db.db";
 
+    private ObjectMapper objectMapper = new ObjectMapper();
+
     public SimpleDbFileDao() {
         readFile();
     }
@@ -21,40 +24,14 @@ public class SimpleDbFileDao implements Dao {
     private void readFile() {
         try {
             File file = new File(DB_MODEL_FILE_NAME);
-
             if(file.exists()){
-                FileInputStream fis = new FileInputStream(DB_MODEL_FILE_NAME);
-                ObjectInputStream ois = new ObjectInputStream(fis);
-
-                allDbModel = (AllDbModel) ois.readObject();
-
-                ois.close();
-                fis.close();
+                allDbModel = objectMapper.readValue(file, AllDbModel.class);
             }
-
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
         } catch (IOException e) {
-            e.printStackTrace();
-        } catch (ClassNotFoundException e) {
             e.printStackTrace();
         } finally{
             if (allDbModel == null)
                 allDbModel = new AllDbModel();
-        }
-    }
-
-    public void saveDbFile(){
-        try {
-            FileOutputStream fos = new FileOutputStream(DB_MODEL_FILE_NAME);
-            ObjectOutputStream ous = new ObjectOutputStream(fos);
-            ous.writeObject(allDbModel);
-            fos.close();
-            ous.close();
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
-        } catch (IOException e) {
-            e.printStackTrace();
         }
     }
 
@@ -64,6 +41,15 @@ public class SimpleDbFileDao implements Dao {
             allDbModel.getRgbDbModel().put(customImageType.getAverageRgb(), new ArrayList<>());
 
         allDbModel.getRgbDbModel().get(customImageType.getAverageRgb()).add(customImageType.getImageLocation());
+    }
+
+    @Override
+    public void commit() {
+        try {
+            objectMapper.writeValue(new File(DB_MODEL_FILE_NAME), allDbModel);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
     protected AllDbModel getAllDbModel(){

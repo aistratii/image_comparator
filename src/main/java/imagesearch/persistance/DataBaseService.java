@@ -30,5 +30,7 @@ public class DataBaseService {
         while(sourceService.hasNext()){
             dao.update(sourceService.getNext());
         }
+
+        dao.commit();
     }
 }

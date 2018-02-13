@@ -49,5 +49,4 @@ public class AnalysisServiceTest {
         verify(comparatorService).compare(source2Service, targetImageSourceService);
     }
 
-
 }

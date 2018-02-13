@@ -1,5 +1,6 @@
 package imagesearch.persistance;
 
+import com.fasterxml.jackson.databind.ObjectMapper;
 import imagesearch.image.CustomImageType;
 import imagesearch.persistance.model.AllDbModel;
 import org.junit.After;
@@ -37,12 +38,9 @@ public class SimpleDbFileDaoTest {
         AllDbModel allDbModel = new AllDbModel();
         allDbModel.getRgbDbModel().put(101, asList("file location1", "file location2"));
 
-        FileOutputStream fileOutputStream = new FileOutputStream(SimpleDbFileDao.DB_MODEL_FILE_NAME);
-        ObjectOutputStream oos = new ObjectOutputStream(fileOutputStream);
 
-        oos.writeObject(allDbModel);
-        oos.close();
-        fileOutputStream.close();
+        ObjectMapper objectMapper = new ObjectMapper();
+        objectMapper.writeValue(new File(SimpleDbFileDao.DB_MODEL_FILE_NAME), allDbModel);
 
         SimpleDbFileDao dao = new SimpleDbFileDao();
         assertEquals(allDbModel, dao.getAllDbModel());
@@ -51,12 +49,12 @@ public class SimpleDbFileDaoTest {
     }
 
     @Test
-    public void saveDbFileTest(){
+    public void commitFileTest(){
         SimpleDbFileDao simpleDbFileDao = new SimpleDbFileDao();
         assertNotNull(simpleDbFileDao.getAllDbModel());
         assertTrue(simpleDbFileDao.getAllDbModel().getRgbDbModel().isEmpty());
 
-        simpleDbFileDao.saveDbFile();
+        simpleDbFileDao.commit();
 
         File file = new File(SimpleDbFileDao.DB_MODEL_FILE_NAME);
         assertTrue(file.exists());

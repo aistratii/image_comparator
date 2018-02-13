@@ -73,6 +73,7 @@ public class DataBaseServiceTest {
 
         verify(dao, atLeastOnce()).update(customImg1);
         verify(dao, atLeastOnce()).update(customImg2);
+        verify(dao).commit();
     }
 
 }

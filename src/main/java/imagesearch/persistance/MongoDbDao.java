@@ -15,4 +15,9 @@ public class MongoDbDao implements Dao {
     public void update(CustomImageType customImageType) {
         throw new UnsupportedOperationException();
     }
+
+    @Override
+    public void commit() {
+        throw new UnsupportedOperationException();
+    }
 }

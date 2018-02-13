@@ -39,9 +39,11 @@ public class WindowsFileLocation implements SourceImageService, ImageStream {
     @Override
     public CustomImageType getNext() {
         try {
-            BufferedImage bufferedImage = ImageIO.read(new File(fileList.pop()));
+            String fileName = fileList.pop();
+            BufferedImage bufferedImage = ImageIO.read(new File(fileName));
             CustomImageType customImageType = new CustomImageType(bufferedImage.getWidth(), bufferedImage.getHeight(), 1);
             customImageType.getGraphics().drawImage(customImageType, 0, 0, null);
+            customImageType.setImageLocation(fileName);
 
             return customImageType;
         } catch (IOException e) {
