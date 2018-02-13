@@ -7,6 +7,7 @@ import org.springframework.stereotype.Component;
 import java.io.*;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 @Component
 public class SimpleDbFileDao implements Dao {
@@ -70,6 +71,8 @@ public class SimpleDbFileDao implements Dao {
 
     @Override
     public List<String> getForRgb(int averageRgb) {
-        throw new UnsupportedOperationException();
+        List<String> resultFileNames = allDbModel.getRgbDbModel().get(averageRgb);
+
+        return resultFileNames == null ? new ArrayList<>() : resultFileNames;
     }
 }

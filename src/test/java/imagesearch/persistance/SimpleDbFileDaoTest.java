@@ -77,4 +77,20 @@ public class SimpleDbFileDaoTest {
         assertEquals(asList("img location"), simpleDbFileDao.getAllDbModel().getRgbDbModel().get(201));
     }
 
+    @Test
+    public void getForRgbTestNotEmpty(){
+        SimpleDbFileDao simpleDaoFile = new SimpleDbFileDao();
+        simpleDaoFile.getAllDbModel().getRgbDbModel().put(101, asList("file loc 1"));
+        simpleDaoFile.getAllDbModel().getRgbDbModel().put(102, asList("file loc 2"));
+
+        assertEquals(asList("file loc 1"), simpleDaoFile.getForRgb(101));
+    }
+
+
+    @Test
+    public void getForRgbTestEmpty(){
+        SimpleDbFileDao simpleDaoFile = new SimpleDbFileDao();
+        assertEquals(asList(), simpleDaoFile.getForRgb(101));
+    }
+
 }
