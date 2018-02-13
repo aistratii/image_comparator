@@ -5,6 +5,7 @@ import imagesearch.persistance.model.AllDbModel;
 import org.springframework.stereotype.Component;
 
 import java.io.*;
+import java.util.ArrayList;
 import java.util.List;
 
 @Component
@@ -57,7 +58,10 @@ public class SimpleDbFileDao implements Dao {
     }
 
     public void update(CustomImageType customImageType){
-        throw new UnsupportedOperationException();
+        if (allDbModel.getRgbDbModel().get(customImageType.getAverageRgb()) == null)
+            allDbModel.getRgbDbModel().put(customImageType.getAverageRgb(), new ArrayList<>());
+
+        allDbModel.getRgbDbModel().get(customImageType.getAverageRgb()).add(customImageType.getImageLocation());
     }
 
     protected AllDbModel getAllDbModel(){

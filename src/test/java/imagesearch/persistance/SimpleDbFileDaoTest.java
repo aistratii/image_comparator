@@ -1,9 +1,12 @@
 package imagesearch.persistance;
 
+import imagesearch.image.CustomImageType;
 import imagesearch.persistance.model.AllDbModel;
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.mockito.runners.MockitoJUnitRunner;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import java.io.*;
@@ -14,7 +17,12 @@ import static java.util.Arrays.asList;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertTrue;
+import static org.mockito.Matchers.longThat;
+import static org.mockito.Mockito.mock;
+import static org.mockito.Mockito.when;
 
+
+@RunWith(MockitoJUnitRunner.class)
 public class SimpleDbFileDaoTest {
 
     @Test
@@ -54,6 +62,19 @@ public class SimpleDbFileDaoTest {
         assertTrue(file.exists());
 
         assertTrue(new File(SimpleDbFileDao.DB_MODEL_FILE_NAME).delete());
+    }
+
+    @Test
+    public void updateTest(){
+        SimpleDbFileDao simpleDbFileDao = new SimpleDbFileDao();
+        CustomImageType image = mock(CustomImageType.class);
+
+        when(image.getAverageRgb()).thenReturn(201);
+        when(image.getImageLocation()).thenReturn("img location");
+
+        simpleDbFileDao.update(image);
+
+        assertEquals(asList("img location"), simpleDbFileDao.getAllDbModel().getRgbDbModel().get(201));
     }
 
 }
