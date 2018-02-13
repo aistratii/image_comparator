@@ -10,6 +10,9 @@ import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.runners.MockitoJUnitRunner;
 
+import java.util.Optional;
+
+import static java.util.Arrays.stream;
 import static org.mockito.Matchers.any;
 import static org.mockito.Mockito.*;
 
@@ -46,5 +49,13 @@ public class MainServiceTest {
         verify(comparatorService).compare(source2Service, targetImageSourceService);
     }
 
+
+    @Test
+    public void testParse(){
+        String[] args = "--load d://users//load_dir --compare d://user//compare_dir".split("");
+
+        Optional<String> ss = stream(args).reduce((s, o) -> s + o);
+        System.out.println(ss);
+    }
 
 }

@@ -1,0 +1,10 @@
+imagesearch\persistance\DataBaseServiceTest.class
+imagesearch\source\SourceImageFactoryTest.class
+imagesearch\MainServiceTest.class
+imagesearch\source\TargetImageSourceServiceTest.class
+imagesearch\source\WindowsFileLocationTest.class
+imagesearch\persistance\SimpleDbFileDaoTest.class
+imagesearch\ReportServiceTest.class
+imagesearch\MainTest.class
+imagesearch\comparator\ImageComparatorTest.class
+imagesearch\comparator\ComparatorServiceTest.class

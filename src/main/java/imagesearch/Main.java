@@ -11,12 +11,16 @@ import org.springframework.stereotype.Component;
 
 import java.util.List;
 
+import static java.util.Arrays.stream;
+
 public class Main {
 
     public static void main(String args[]){
-        ApplicationContext appctx = new AnnotationConfigApplicationContext(ImageSearchConfig.class);
-        final MainService mainService = (MainService) appctx.getBean("mainService");
-        mainService.work(args);
+        //ApplicationContext appctx = new AnnotationConfigApplicationContext(ImageSearchConfig.class);
+        //final MainService mainService = (MainService) appctx.getBean("mainService");
+        //mainService.work(args);
+
+        stream(args).forEach(System.out::println);
     }
 
 }
