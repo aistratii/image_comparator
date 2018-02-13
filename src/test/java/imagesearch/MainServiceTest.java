@@ -1,6 +1,8 @@
 package imagesearch;
 
+import imagesearch.comparator.AnalysisService;
 import imagesearch.comparator.ComparatorService;
+import imagesearch.persistance.DataBaseService;
 import imagesearch.source.SourceImageFactory;
 import imagesearch.source.SourceImageService;
 import imagesearch.source.TargetImageSourceService;
@@ -8,54 +10,63 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
+import org.mockito.Spy;
 import org.mockito.runners.MockitoJUnitRunner;
 
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 import java.util.Optional;
 
+import static java.util.Arrays.asList;
 import static java.util.Arrays.stream;
+import static org.junit.Assert.assertEquals;
 import static org.mockito.Matchers.any;
 import static org.mockito.Mockito.*;
 
 @RunWith(MockitoJUnitRunner.class)
 public class MainServiceTest {
 
-    @Mock
-    private SourceImageFactory sourceImageFactory;
 
     @Mock
-    private TargetImageSourceService targetImageSourceService;
+    private DataBaseService dbService;
 
     @Mock
-    private ComparatorService comparatorService;
+    private AnalysisService analysisService;
 
     @InjectMocks
+    @Spy
     private MainService mainService;
+
 
     @Test
     public void workTest(){
-        final String sources[] = {"source1", "source2"};
-        final SourceImageService source1Service = mock(SourceImageService.class);
-        final SourceImageService source2Service = mock(SourceImageService.class);
+        Map<String, List<String>> expectedParams = new HashMap<>();
+        String[] args = {"--load", "load url 1,load url 2", "--analyze", "analyze 1,analyze 2,analyze 3"};
+        expectedParams.put("--load", asList("load url 1", "load url 2"));
+        expectedParams.put("--analyze", asList("analyze 1", "analyze 2", "analyze 3"));
 
-        when(sourceImageFactory.getSource("source1")).thenReturn(source1Service);
-        when(sourceImageFactory.getSource("source2")).thenReturn(source2Service);
+        doReturn(expectedParams).when(mainService).reduceParams(args);
 
-        doNothing().when(comparatorService).compare(source1Service, targetImageSourceService);
-        doNothing().when(comparatorService).compare(source2Service, targetImageSourceService);
+        mainService.work(args);
 
-        mainService.work(sources);
-
-        verify(comparatorService).compare(source1Service, targetImageSourceService);
-        verify(comparatorService).compare(source2Service, targetImageSourceService);
+        verify(dbService).updateDb("load url 1");
+        verify(dbService).updateDb("load url 2");
+        verify(analysisService).analyze(asList("analyze 1", "analyze 2", "analyze 3"));
     }
 
 
     @Test
     public void testParse(){
-        String[] args = "--load d://users//load_dir --compare d://user//compare_dir".split("");
+        Map<String, List<String>> expectedParams = new HashMap<>();
+        expectedParams.put("--load", asList("d://users//load_dir1", "d://users//load_dir2"));
+        expectedParams.put("--analyze", asList("d://users//analyze_dir"));
 
-        Optional<String> ss = stream(args).reduce((s, o) -> s + o);
-        System.out.println(ss);
+        String[] args = {"--load", "d://users//load_dir1,d://users//load_dir2", "--analyze", "d://users//analyze_dir"};
+
+        Map<String, List<String>> actualParams = mainService.reduceParams(args);
+
+        assertEquals(expectedParams, actualParams);
     }
 
 }

@@ -1,5 +1,6 @@
 package imagesearch;
 
+import imagesearch.comparator.AnalysisService;
 import imagesearch.comparator.ComparatorService;
 import imagesearch.persistance.DataBaseService;
 import imagesearch.source.SourceImageFactory;
@@ -9,51 +10,49 @@ import org.apache.commons.lang3.tuple.Pair;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.*;
 import java.util.stream.Collectors;
 
 import static java.util.Arrays.asList;
 import static java.util.Arrays.stream;
+import static java.util.Optional.of;
 
 @Component
 public class MainService{
 
     @Autowired
-    private SourceImageFactory sourceImageFactory;
-
-    @Autowired
-    private ComparatorService comparatorService;
-
-    @Autowired
-    private TargetImageSourceService targetImageSourceService;
-
-    @Autowired
     private DataBaseService dataBaseService;
 
+    @Autowired
+    private AnalysisService analysisService;
+
     public void work(final String args[]){
+        Map<String, List<String>> reducedParams = reduceParams(args);
 
-        List<Pair<String, Integer>> paramsAndPositions = parse(args);
-
-
-        List<SourceImageService> sourceServices =
-                stream(args)
-                .map(source -> sourceImageFactory.getSource(source))
-                .collect(Collectors.toList());
-
-
-        sourceServices
-                .parallelStream()
-                .forEach(srcSvc -> comparatorService.compare(srcSvc, targetImageSourceService));
-
+        for (Map.Entry<String, List<String>> entry: reducedParams.entrySet()){
+            if (entry.getKey().equals("--load"))
+                entry.getValue().forEach(path -> dataBaseService.updateDb(path));
+            if(entry.getKey().equals("--analyze"))
+                analysisService.analyze(entry.getValue());
+        }
     }
 
-    public List<Pair<String, Integer>> parse(String[] args) {
-        List<Pair<String, Integer>> paramMetaData = new ArrayList<>();
+    protected Map<String, List<String>> reduceParams(String[] args) {
+        Map<String, List<String>> paramMetaData = new HashMap<>();
 
-        //String longInputStream = stream(args).reduce((s, o) -> s + 0);
+        for (int i = 0; i < args.length; i++){
+            if (args[i].startsWith("--")) {
+                String paramKeyWord = args[i];
 
-        asList("-load", "-compare");
+                i++;
+                String values[] = args[i].split(",");
+
+                paramMetaData.put(paramKeyWord, new ArrayList<>());
+
+                stream(values)
+                        .forEach(value -> paramMetaData.get(paramKeyWord).add(value));
+            }
+        }
 
         return paramMetaData;
     }
