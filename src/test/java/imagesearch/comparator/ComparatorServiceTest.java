@@ -41,7 +41,7 @@ public class ComparatorServiceTest {
         final CustomImageType targetImage = mock(CustomImageType.class);
         final ImageStream localImageStream = mock(ImageStream.class);
 
-        when(sourceImage.getAverageRgb()).thenReturn(100);
+        when(sourceImage.getRgb()).thenReturn(100);
 
         when(sourceService.getNext()).thenReturn(sourceImage);
         when(sourceService.hasNext()).thenReturn(true).thenReturn(false);
@@ -66,7 +66,7 @@ public class ComparatorServiceTest {
         final CustomImageType targetImage = mock(CustomImageType.class);
         final ImageStream localImageStream = mock(ImageStream.class);
 
-        when(sourceImage.getAverageRgb()).thenReturn(100);
+        when(sourceImage.getRgb()).thenReturn(100);
 
         when(sourceService.getNext()).thenReturn(sourceImage);
         when(sourceService.hasNext()).thenReturn(true).thenReturn(false);

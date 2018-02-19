@@ -23,7 +23,7 @@ public class ComparatorService {
         while(source.hasNext()) {
             CustomImageType sourceImage = source.getNext();
 
-            ImageStream localImageStream = target.getStreamForRgb(sourceImage.getAverageRgb());
+            ImageStream localImageStream = target.getStreamForRgb(sourceImage.getRgb());
 
             while (localImageStream.hasNext()) {
                 CustomImageType targetImage = localImageStream.getNext();

@@ -67,7 +67,7 @@ public class SimpleDbFileDaoTest {
         SimpleDbFileDao simpleDbFileDao = new SimpleDbFileDao();
         CustomImageType image = mock(CustomImageType.class);
 
-        when(image.getAverageRgb()).thenReturn(201);
+        when(image.getRgb()).thenReturn(201);
         when(image.getImageLocation()).thenReturn("img location");
 
         simpleDbFileDao.update(image);
