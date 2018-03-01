@@ -9,11 +9,15 @@ import imagesearch.persistance.DataBaseService;
 import imagesearch.persistance.SimpleDbFileDao;
 import imagesearch.source.SourceImageFactory;
 import imagesearch.source.TargetImageSourceService;
-import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.Configuration;
-import org.springframework.context.annotation.Scope;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.context.annotation.*;
+import org.springframework.context.support.PropertySourcesPlaceholderConfigurer;
 
 @Configuration
+@PropertySources({
+        @PropertySource("classpath:image-comparator.properties"),
+        @PropertySource("classpath:simple-db-file-dao.properties")
+})
 public class ImageSearchConfig {
 
     @Bean
@@ -43,8 +47,12 @@ public class ImageSearchConfig {
 
     @Scope("prototype")
     @Bean
-    public ImageComparator imageComparator(ComparatorCache comparatorCache){
-        return new ImageComparator(comparatorCache);
+    public ImageComparator imageComparator(ComparatorCache comparatorCache,
+                                           @Value("${threadpool_size}") int threadpoolSize,
+                                           @Value("${tolerance_threshold_rgb}") int toleranceThresholdRgb,
+                                           @Value("${tolerance_threshold_percent}") int toleranceThresholdPercent
+                                           ){
+        return new ImageComparator(comparatorCache, threadpoolSize, toleranceThresholdRgb, toleranceThresholdPercent);
     }
 
     @Scope("prototype")
@@ -54,8 +62,8 @@ public class ImageSearchConfig {
     }
 
     @Bean
-    public Dao dao(){
-        return new SimpleDbFileDao();
+    public Dao dao(@Value("${db-model-file-name}") String dbModelFileName){
+        return new SimpleDbFileDao(dbModelFileName);
     }
 
     @Bean
@@ -66,5 +74,10 @@ public class ImageSearchConfig {
     @Bean
     public AnalysisService analysisService(){
         return new AnalysisService();
+    }
+
+    @Bean
+    public static PropertySourcesPlaceholderConfigurer propertySourcesPlaceholderConfigurer() {
+        return new PropertySourcesPlaceholderConfigurer();
     }
 }

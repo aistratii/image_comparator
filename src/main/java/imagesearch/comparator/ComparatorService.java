@@ -11,7 +11,6 @@ import org.springframework.stereotype.Component;
 
 @Component
 public class ComparatorService {
-    private final int RGB_DIFF_TOLERANCE = 20;
 
     @Autowired
     private ImageComparator imageComparator;

@@ -3,6 +3,8 @@ package imagesearch.comparator;
 import imagesearch.image.CustomImageType;
 import org.apache.commons.lang3.tuple.Pair;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.context.annotation.ImportResource;
 import org.springframework.stereotype.Component;
 
 import java.awt.image.BufferedImage;
@@ -17,14 +19,21 @@ import static java.lang.Math.min;
 @Component
 public class ImageComparator {
     private final ExecutorService executorService;
-    private final int THREADPOOL_SIZE = 4;
-    private final int TOLERANCE_THRESHOLD_RGB = 10;
-    private final int TOLERANCE_THRESHOLD_PERCENT = 5;
 
-    @Autowired
-    final ComparatorCache comparatorCache;
+    private final int THREADPOOL_SIZE;
+    private final int TOLERANCE_THRESHOLD_RGB;
+    private final int TOLERANCE_THRESHOLD_PERCENT;
 
-    public ImageComparator(ComparatorCache comparatorCache) {
+    private final ComparatorCache comparatorCache;
+
+    public ImageComparator(ComparatorCache comparatorCache,
+                           int threadPoolSize,
+                           int toleranceThresholdRgb,
+                           int toleranceThresholdPercent) {
+        this.THREADPOOL_SIZE = threadPoolSize;
+        this.TOLERANCE_THRESHOLD_RGB = toleranceThresholdRgb;
+        this.TOLERANCE_THRESHOLD_PERCENT = toleranceThresholdRgb;
+
         this.executorService = Executors.newFixedThreadPool(THREADPOOL_SIZE);
         this.comparatorCache = comparatorCache;
     }

@@ -13,13 +13,14 @@ import java.util.Optional;
 @Component
 public class SimpleDbFileDao implements Dao {
     private AllDbModel allDbModel;
-    public final static String DB_MODEL_FILE_NAME = "db.db";
+    private final String DB_MODEL_FILE_NAME;
 
-    private ObjectMapper objectMapper = new ObjectMapper();
-
-    public SimpleDbFileDao() {
+    public SimpleDbFileDao(String dbModelFileName){
+        this.DB_MODEL_FILE_NAME = dbModelFileName;
         readFile();
     }
+
+    private ObjectMapper objectMapper = new ObjectMapper();
 
     private void readFile() {
         try {

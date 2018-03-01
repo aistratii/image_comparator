@@ -23,7 +23,7 @@ public class ImageComparatorTest {
     private ComparatorCache cache = spy(new ComparatorCache());
 
     @Spy
-    private ImageComparator imageComparator = new ImageComparator(cache);
+    private ImageComparator imageComparator = new ImageComparator(cache, 1, 1, 1);
 
     @Test
     public void compareTestSuccess() throws IOException {
