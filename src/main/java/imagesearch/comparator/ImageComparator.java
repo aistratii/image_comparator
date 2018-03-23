@@ -32,7 +32,7 @@ public class ImageComparator {
                            int toleranceThresholdPercent) {
         this.THREADPOOL_SIZE = threadPoolSize;
         this.TOLERANCE_THRESHOLD_RGB = toleranceThresholdRgb;
-        this.TOLERANCE_THRESHOLD_PERCENT = toleranceThresholdRgb;
+        this.TOLERANCE_THRESHOLD_PERCENT = toleranceThresholdPercent;
 
         this.executorService = Executors.newFixedThreadPool(THREADPOOL_SIZE);
         this.comparatorCache = comparatorCache;
@@ -43,27 +43,46 @@ public class ImageComparator {
 
         comparatorCache.setBuffer(pairOfResized.getLeft(), pairOfResized.getRight());
 
-        IntStream.of(THREADPOOL_SIZE).forEach(part -> {
-            executorService.execute(() ->{
-                for (int index = part * min(comparatorCache.getFirstSize(), comparatorCache.getSecondSize()) / THREADPOOL_SIZE;
-                        index < min(comparatorCache.getFirstSize(), comparatorCache.getSecondSize());
-                        index++){
+//        IntStream.of(THREADPOOL_SIZE).forEach(part -> {
+//            executorService.execute(() ->{
+//                for (int index = part * min(comparatorCache.getFirstSize(), comparatorCache.getSecondSize()) / THREADPOOL_SIZE;
+//                        index < (part+1) * min(comparatorCache.getFirstSize(), comparatorCache.getSecondSize()) / THREADPOOL_SIZE;
+//                        index++){
+//
+//                    int redDiff = ((comparatorCache.getFirstVector()[index] >> 16) & 0xFF) - ((comparatorCache.getSecondVector()[index] >> 16) & 0xFF);
+//                    int greenDiff = ((comparatorCache.getFirstVector()[index] >> 8) & 0xFF) - ((comparatorCache.getSecondVector()[index] >> 8) & 0xFF);
+//                    int blueDiff = ((comparatorCache.getFirstVector()[index] >> 0) & 0xFF) - ((comparatorCache.getSecondVector()[index] >> 0) & 0xFF);
+//
+//                    boolean diffIsAcceptable = (redDiff >= 0 && redDiff <= TOLERANCE_THRESHOLD_RGB)
+//                            && (greenDiff >= 0 && greenDiff <= TOLERANCE_THRESHOLD_RGB)
+//                            && (blueDiff >= 0 && blueDiff <= TOLERANCE_THRESHOLD_RGB);
+//
+//                    if (diffIsAcceptable)
+//                        comparatorCache.incrementSuccesses();
+//                    else
+//                        comparatorCache.incrementFails();
+//                }
+//            });
+//        });
 
-                    int redDiff = ((comparatorCache.getFirstVector()[part] >> 16) & 0xFF) - ((comparatorCache.getSecondVector()[part] >> 16) & 0xFF);
-                    int greenDiff = ((comparatorCache.getFirstVector()[part] >> 8) & 0xFF) - ((comparatorCache.getSecondVector()[part] >> 8) & 0xFF);
-                    int blueDiff = ((comparatorCache.getFirstVector()[part] >> 0) & 0xFF) - ((comparatorCache.getSecondVector()[part] >> 0) & 0xFF);
+        final int firstVector[]  = comparatorCache.getFirstVector();
+        final int secondVector[]  = comparatorCache.getSecondVector();
+        int size = min(comparatorCache.getFirstSize(), comparatorCache.getSecondSize());
 
-                    boolean diffIsAcceptable = (redDiff >= 0 && redDiff <= TOLERANCE_THRESHOLD_RGB)
-                            && (greenDiff >= 0 && greenDiff <= TOLERANCE_THRESHOLD_RGB)
-                            && (blueDiff >= 0 && blueDiff <= TOLERANCE_THRESHOLD_RGB);
+        for (int index = 0; index < size; index++){
+            int redDiff = ((firstVector[index] >> 16) & 0xFF) - ((secondVector[index] >> 16) & 0xFF);
+            int greenDiff = ((firstVector[index] >> 8) & 0xFF) - ((secondVector[index] >> 8) & 0xFF);
+            int blueDiff = ((firstVector[index] >> 0) & 0xFF) - ((secondVector[index] >> 0) & 0xFF);
 
-                    if (diffIsAcceptable)
-                        comparatorCache.incrementSuccesses();
-                    else
-                        comparatorCache.incrementFails();
-                }
-            });
-        });
+            boolean diffIsAcceptable = (redDiff >= 0 && redDiff <= TOLERANCE_THRESHOLD_RGB)
+                    && (greenDiff >= 0 && greenDiff <= TOLERANCE_THRESHOLD_RGB)
+                    && (blueDiff >= 0 && blueDiff <= TOLERANCE_THRESHOLD_RGB);
+
+            if (diffIsAcceptable)
+                comparatorCache.incrementSuccesses();
+            else
+                comparatorCache.incrementFails();
+        }
 
         try {
             executorService.awaitTermination(20l, TimeUnit.SECONDS);
